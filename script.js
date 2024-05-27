@@ -40,6 +40,39 @@ function showMain() {
     location.reload();
 }
 
+function showHowItWorks() {
+    setActiveSection('howItWorks');
+    const dynamicContent = document.getElementById('dynamic-content');
+    dynamicContent.innerHTML = `
+        <div class="squad_con">
+            <div class="squadbox" onclick="showMain()">
+                <div class="chapter1">
+                    <div class="image">
+                        <img src="images/notdao_icon.webp" alt="">
+                    </div>
+                    <div class="text">
+                        <p>Mine Stewie</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="how_it_works_page">
+            <h2>How It Works</h2>
+            <p>Calling all adventurers! 🌟
+
+Mine Stewie tokens with all your might until the TGE arrives! ⛏️✨ Use different boosters to supercharge your gains and collect even more coins. Head to the Earn section and conquer the daily quests to win massive bags of coins! 💰💥
+
+Invite your friends to join the journey and earn even more riches together! 🎉👯‍♂️ At the end, all your coins will be converted into STWE tokens. These will be distributed equally based on the total coins in the game and among players. The exact exchange ratio isn't available yet, but stay tuned until the TGE for the big reveal! 📅🔍
+
+Join our social media channels for all the latest updates and epic announcements! 📲🌐
+
+And here's the best part: 10% of the total STWE supply will be available for you to play for. If you're lucky and gather enough coins, you'll even be able to purchase a whitelist spot for our upcoming presales from the boost store! 🚀🏆
+
+Are you ready to become the ultimate Stewie Token master? Your adventure awaits! 🌠🔥</p>
+        </div>
+    `;
+}
+
 function showFrens() {
     setActiveSection('frens');
     const dynamicContent = document.getElementById('dynamic-content');
@@ -51,14 +84,8 @@ function showFrens() {
                         <img src="images/notdao_icon.webp" alt="">
                     </div>
                     <div class="text">
-                        <p>NOT DAO</p>
-                        <img src="images/coin_icon.webp" alt="">
-                        <span>27,220,910</span>
+                        <p>Mine Stewie</p>
                     </div>
-                </div>
-                <div class="chapter2">
-                    <img src="images/silver_trophy.webp" alt="">
-                    <p>Diamond</p>
                 </div>
             </div>
         </div>
