@@ -112,6 +112,7 @@ html {
     justify-content: space-between;
     padding: 0.625rem;
     align-items: center;
+    cursor: pointer;
 }
 
 .squadbox .chapter1 {
@@ -261,6 +262,12 @@ html {
 .coinleftbox .numbers span {
     color: rgb(225, 225, 225);
     margin-left: -0.5rem;
+}
+
+.coinleftbox .numbers small {
+    font-size: 0.75rem;
+    color: #ccc;
+    margin-top: 0.25rem;
 }
 
 .functionbox {
