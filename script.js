@@ -10,22 +10,30 @@ function counter() {
     document.getElementById("count").innerHTML = score;
     left--;
     document.getElementById("left_coin").innerHTML = left;
+    updateProgressBar();
     if (navigator.vibrate) {
-        navigator.vibrate(50); // Haptic feedback
+        navigator.vibrate(50);
     }
     if (score % 69 === 0) {
         showAd();
     }
 }
 
+function updateProgressBar() {
+    const progressBar = document.getElementById('progress-bar');
+    const progress = ((6000 - left) / 6000) * 100;
+    progressBar.style.width = `${progress}%`;
+}
+
 function showAd() {
     document.getElementById('adContainer').style.display = 'block';
     setTimeout(() => {
         document.getElementById('adContainer').style.display = 'none';
-    }, 30000); // Show ad for 30 seconds
+    }, 30000);
 }
 
 function showFrens() {
+    setActiveSection('frens');
     const dynamicContent = document.getElementById('dynamic-content');
     dynamicContent.innerHTML = `
         <div class="frens_page">
@@ -67,13 +75,24 @@ function copyLink() {
 }
 
 function showEarn() {
+    setActiveSection('earn');
     alert('Show Earn Tasks Here');
 }
 
 function showBoosts() {
+    setActiveSection('boosts');
     alert('Show Boosts Here');
 }
 
 function showKing() {
+    setActiveSection('king');
     alert('Show King Leaderboard Here');
+}
+
+function setActiveSection(sectionId) {
+    const sections = document.querySelectorAll('.functions .func');
+    sections.forEach(section => {
+        section.classList.remove('active');
+    });
+    document.getElementById(sectionId).classList.add('active');
 }
