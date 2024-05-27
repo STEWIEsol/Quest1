@@ -1,5 +1,6 @@
 let score = 0;
 let left = 6000;
+const maxLeft = 6000;
 
 document.getElementById('tapButton').addEventListener('click', function() {
     counter();
@@ -21,7 +22,7 @@ function counter() {
 
 function updateProgressBar() {
     const progressBar = document.getElementById('progress-bar');
-    const progress = ((6000 - left) / 6000) * 100;
+    const progress = ((maxLeft - left) / maxLeft) * 100;
     progressBar.style.width = `${progress}%`;
 }
 
@@ -36,6 +37,24 @@ function showFrens() {
     setActiveSection('frens');
     const dynamicContent = document.getElementById('dynamic-content');
     dynamicContent.innerHTML = `
+        <div class="squad_con">
+            <div class="squadbox">
+                <div class="chapter1">
+                    <div class="image">
+                        <img src="images/notdao_icon.webp" alt="">
+                    </div>
+                    <div class="text">
+                        <p>NOT DAO</p>
+                        <img src="images/coin_icon.webp" alt="">
+                        <span>27,220,910</span>
+                    </div>
+                </div>
+                <div class="chapter2">
+                    <img src="images/silver_trophy.webp" alt="">
+                    <p>Diamond</p>
+                </div>
+            </div>
+        </div>
         <div class="frens_page">
             <div class="frens_header">
                 <h2>Your Frens</h2>
@@ -96,3 +115,19 @@ function setActiveSection(sectionId) {
     });
     document.getElementById(sectionId).classList.add('active');
 }
+
+// Energy cooldown logic
+let energy = 0;
+const maxEnergy = 6000;
+const energyIncrement = 0.08;
+const energyElement = document.getElementById('left_coin');
+
+function updateEnergy() {
+    if (energy < maxEnergy) {
+        energy += energyIncrement;
+        energyElement.innerHTML = Math.floor(energy);
+        setTimeout(updateEnergy, 1000);
+    }
+}
+
+updateEnergy();
