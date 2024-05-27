@@ -1,7 +1,16 @@
 let score = 0;
-let left = 6000;
+let left = 6969;
+let cooldown = 86400000; // 24 hours in milliseconds
+let lastTapTime = localStorage.getItem('lastTapTime');
+let cooldownEnd = lastTapTime ? parseInt(lastTapTime) + cooldown : 0;
+let now = Date.now();
 
 document.getElementById('tapButton').addEventListener('click', function() {
+    if (now < cooldownEnd) {
+        alert("You have reached your daily limit. Please wait until the cooldown period is over.");
+        return;
+    }
+
     counter();
 });
 
@@ -13,8 +22,11 @@ function counter() {
     if (navigator.vibrate) {
         navigator.vibrate(50); // Haptic feedback
     }
-    if (score % 69 === 0) {
+    if (score % 69 === 0 || Math.random() < 0.1) { // Show ad every 69 clicks or randomly
         showAd();
+    }
+    if (left <= 0) {
+        startCooldown();
     }
 }
 
@@ -23,6 +35,15 @@ function showAd() {
     setTimeout(() => {
         document.getElementById('adContainer').style.display = 'none';
     }, 30000); // Show ad for 30 seconds
+}
+
+function startCooldown() {
+    alert("You have reached the maximum number of taps for today. Please come back after the cooldown period.");
+    localStorage.setItem('lastTapTime', Date.now());
+    setTimeout(() => {
+        left = 6969;
+        document.getElementById("left_coin").innerHTML = left;
+    }, cooldown);
 }
 
 function showFrens() {
@@ -77,4 +98,3 @@ function showBoosts() {
 function showKing() {
     alert('Show King Leaderboard Here');
 }
-
