@@ -278,6 +278,11 @@ html {
     cursor: pointer; /* Add cursor pointer for interactivity */
 }
 
+.functionbox .functions .func.active {
+    background-color: #ffcc00;
+    border-radius: 10px;
+}
+
 .functionbox .functions .func:nth-child(1)::after {
     content: "";
     height: 80%;
@@ -317,13 +322,12 @@ html {
     position: relative;
 }
 
-.rangebox::before {
-    content: "";
-    width: 50%;
-    border-radius: 20px;
+.progress {
     height: 100%;
-    position: absolute;
     background-color: rgb(226, 226, 226);
+    border-radius: 20px;
+    width: 0%;
+    transition: width 0.3s ease-in-out;
 }
 
 .home_bar {
