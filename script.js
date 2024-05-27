@@ -5,6 +5,12 @@ let lastTapTime = localStorage.getItem('lastTapTime');
 let cooldownEnd = lastTapTime ? parseInt(lastTapTime) + cooldown : 0;
 let now = Date.now();
 
+// Check if cooldown has ended
+if (now >= cooldownEnd) {
+    left = 6969;
+    document.getElementById("left_coin").innerHTML = left;
+}
+
 document.getElementById('tapButton').addEventListener('click', function() {
     if (now < cooldownEnd) {
         alert("You have reached your daily limit. Please wait until the cooldown period is over.");
@@ -59,13 +65,10 @@ function showFrens() {
                 <h3>Invite Link</h3>
                 <p>Invite your frens and get bonuses!</p>
                 <div class="invite_link">
-                    <input type="text" value="t.me/stewie_quest_bot?start=YOUR_REFERRAL_CODE" readonly>
-                    <button onclick="copyLink()">Copy</button>
+                    <input type="text" value="t.me/stewie_quest_bot?start=YOUR_REFERRAL_CODE" readonly onclick="copyInviteLink(this)">
                 </div>
-            </div>
-            <div class="invite_rewards">
                 <h3>2,500 Coins for Invite</h3>
-                <p>You'll get 2500 coins for every invite. Every boss killed by your referral will earn you huge prizes:</p>
+                <p>You'll get 2500 coins for every invite.</p>
                 <ul>
                     <li>LVL 1: 12,500 Coins</li>
                     <li>LVL 2: 25,000 Coins</li>
@@ -76,25 +79,58 @@ function showFrens() {
     `;
 }
 
-function howItWorks() {
-    alert('Explain how the referral system works.');
-}
-
-function copyLink() {
-    const copyText = document.querySelector('.invite_link input');
-    copyText.select();
-    document.execCommand('copy');
-    alert('Referral link copied to clipboard');
-}
-
 function showEarn() {
-    alert('Show Earn Tasks Here');
+    const dynamicContent = document.getElementById('dynamic-content');
+    dynamicContent.innerHTML = `
+        <div class="earn_page">
+            <h2>Earn Coins</h2>
+            <p>Complete tasks to earn more coins:</p>
+            <ul>
+                <li>Like a tweet: 1000 coins</li>
+                <li>Retweet: 1000 coins</li>
+                <li>Join a Telegram channel: 1000 coins</li>
+            </ul>
+        </div>
+    `;
 }
 
 function showBoosts() {
-    alert('Show Boosts Here');
+    const dynamicContent = document.getElementById('dynamic-content');
+    dynamicContent.innerHTML = `
+        <div class="boosts_page">
+            <h2>Boosts</h2>
+            <p>Buy items to boost your game:</p>
+            <ul>
+                <li>Auto Mine: 5000 coins</li>
+                <li>Energy Boost: 3000 coins</li>
+            </ul>
+        </div>
+    `;
 }
 
 function showKing() {
-    alert('Show King Leaderboard Here');
+    const dynamicContent = document.getElementById('dynamic-content');
+    dynamicContent.innerHTML = `
+        <div class="king_page">
+            <h2>Leaderboard</h2>
+            <p>See who is leading the game:</p>
+            <ul>
+                <li>Player 1: 500,000 coins</li>
+                <li>Player 2: 450,000 coins</li>
+                <li>Player 3: 400,000 coins</li>
+            </ul>
+        </div>
+    `;
 }
+
+function copyInviteLink(input) {
+    input.select();
+    input.setSelectionRange(0, 99999); // For mobile devices
+    navigator.clipboard.writeText(input.value);
+    alert("Copied the invite link: " + input.value);
+}
+
+function howItWorks() {
+    alert("Invite your friends and earn coins for each referral.");
+}
+
