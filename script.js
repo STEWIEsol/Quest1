@@ -1,6 +1,9 @@
 let score = 0;
 let left = 6000;
 const maxLeft = 6000;
+const energyRate = 0.08;
+let energy = left;
+const energyElement = document.getElementById('left_coin');
 
 document.getElementById('tapButton').addEventListener('click', function() {
     counter();
@@ -10,12 +13,12 @@ function counter() {
     score++;
     document.getElementById("count").innerHTML = score;
     left--;
-    document.getElementById("left_coin").innerHTML = left;
+    energyElement.innerHTML = Math.floor(left);
     updateProgressBar();
     if (navigator.vibrate) {
         navigator.vibrate(50);
     }
-    if (score % 69 === 0) {
+    if (score % 100 === 0) {
         showAd();
     }
 }
@@ -33,12 +36,16 @@ function showAd() {
     }, 30000);
 }
 
+function showMain() {
+    location.reload();
+}
+
 function showFrens() {
     setActiveSection('frens');
     const dynamicContent = document.getElementById('dynamic-content');
     dynamicContent.innerHTML = `
         <div class="squad_con">
-            <div class="squadbox">
+            <div class="squadbox" onclick="showMain()">
                 <div class="chapter1">
                     <div class="image">
                         <img src="images/notdao_icon.webp" alt="">
@@ -117,15 +124,11 @@ function setActiveSection(sectionId) {
 }
 
 // Energy cooldown logic
-let energy = 0;
-const maxEnergy = 6000;
-const energyIncrement = 0.08;
-const energyElement = document.getElementById('left_coin');
-
 function updateEnergy() {
-    if (energy < maxEnergy) {
-        energy += energyIncrement;
-        energyElement.innerHTML = Math.floor(energy);
+    if (energy < maxLeft) {
+        energy += energyRate;
+        left = Math.floor(energy);
+        energyElement.innerHTML = `${left}`;
         setTimeout(updateEnergy, 1000);
     }
 }
