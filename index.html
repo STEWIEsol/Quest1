@@ -54,8 +54,8 @@
                     <img src="images/flash.webp" alt="">
                 </div>
                 <div class="numbers">
-                    <p id="left_coin">6000</p>
-                    <span>/6000</span>
+                    <p id="left_coin">6969</p>
+                    <span>/6969</span>
                 </div>
             </div>
             <div class="functionbox">
@@ -85,9 +85,7 @@
             </div>
         </div>
         <div class="home_bar">
-            <div class="line">
-                <!-- Home bar line or divider -->
-            </div>
+            <button class="mine_button">Mine</button>
         </div>
         <!-- Ad container -->
         <div id="adContainer" style="display:none;">
@@ -106,3 +104,108 @@
 </body>
 
 </html>
+Step 2: Update script.js
+Implement the cooldown mechanism, random ad display after a set number of clicks, and functionality for different buttons.
+
+javascript
+Copy code
+let score = 0;
+let left = 6969;
+let cooldown = 86400000; // 24 hours in milliseconds
+let lastTapTime = localStorage.getItem('lastTapTime');
+let cooldownEnd = lastTapTime ? parseInt(lastTapTime) + cooldown : 0;
+let now = Date.now();
+
+document.getElementById('tapButton').addEventListener('click', function() {
+    if (now < cooldownEnd) {
+        alert("You have reached your daily limit. Please wait until the cooldown period is over.");
+        return;
+    }
+
+    counter();
+});
+
+function counter() {
+    score++;
+    document.getElementById("count").innerHTML = score;
+    left--;
+    document.getElementById("left_coin").innerHTML = left;
+    if (navigator.vibrate) {
+        navigator.vibrate(50); // Haptic feedback
+    }
+    if (score % 69 === 0 || Math.random() < 0.1) { // Show ad every 69 clicks or randomly
+        showAd();
+    }
+    if (left <= 0) {
+        startCooldown();
+    }
+}
+
+function showAd() {
+    document.getElementById('adContainer').style.display = 'block';
+    setTimeout(() => {
+        document.getElementById('adContainer').style.display = 'none';
+    }, 30000); // Show ad for 30 seconds
+}
+
+function startCooldown() {
+    alert("You have reached the maximum number of taps for today. Please come back after the cooldown period.");
+    localStorage.setItem('lastTapTime', Date.now());
+    setTimeout(() => {
+        left = 6969;
+        document.getElementById("left_coin").innerHTML = left;
+    }, cooldown);
+}
+
+function showFrens() {
+    const dynamicContent = document.getElementById('dynamic-content');
+    dynamicContent.innerHTML = `
+        <div class="frens_page">
+            <div class="frens_header">
+                <h2>Your Frens</h2>
+                <p>0 Frens</p>
+                <button onclick="howItWorks()">How it Works</button>
+            </div>
+            <div class="invite_section">
+                <h3>Invite Link</h3>
+                <p>Invite your frens and get bonuses!</p>
+                <div class="invite_link">
+                    <input type="text" value="t.me/stewie_quest_bot?start=YOUR_REFERRAL_CODE" readonly>
+                    <button onclick="copyLink()">Copy</button>
+                </div>
+            </div>
+            <div class="invite_rewards">
+                <h3>2,500 Coins for Invite</h3>
+                <p>You'll get 2500 coins for every invite. Every boss killed by your referral will earn you huge prizes:</p>
+                <ul>
+                    <li>LVL 1: 12,500 Coins</li>
+                    <li>LVL 2: 25,000 Coins</li>
+                    <li>LVL 3: 50,000 Coins</li>
+                </ul>
+            </div>
+        </div>
+    `;
+}
+
+function howItWorks() {
+    alert('Explain how the referral system works.');
+}
+
+function copyLink() {
+    const copyText = document.querySelector('.invite_link input');
+    copyText.select();
+    document.execCommand('copy');
+    alert('Referral link copied to clipboard');
+}
+
+function showEarn() {
+    alert('Show Earn Tasks Here');
+}
+
+function showBoosts() {
+    alert('Show Boosts Here');
+}
+
+function showKing() {
+    alert('Show King Leaderboard Here');
+}
