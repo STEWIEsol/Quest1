@@ -7,46 +7,38 @@
 }
 
 body {
-    width: 100%;
-    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-html {
-    font-size: 16px;
+    width: 100%;
+    height: 100vh;
+    background-color: #000;
     font-family: "Open Sans", sans-serif;
     color: #fff;
-    touch-action: manipulation; /* Prevent zooming on tap */
+    overflow: hidden; /* Prevent scrolling */
 }
 
 .container {
-    width: 25rem;
-    max-width: 100%;
+    width: 100%;
+    max-width: 375px; /* Standard width for a mobile view */
+    height: 100%;
+    max-height: 812px; /* Standard height for a mobile view */
     display: flex;
-    background: rgb(255, 193, 0);
-    background: linear-gradient(0deg, rgba(255, 193, 0, 1) 0%, rgba(0, 0, 0, 1) 100
-.container {
-    width: 25rem;
-    max-width: 100%;
-    display: flex;
+    flex-direction: column;
     background: rgb(255, 193, 0);
     background: linear-gradient(0deg, rgba(255, 193, 0, 1) 0%, rgba(0, 0, 0, 1) 100%);
     justify-content: space-between;
     align-items: center;
-    flex-direction: column;
 }
 
 /* squad chapter */
 .squad_con {
-    margin: 1.875rem 0 2.5rem 0;
-    width: 100%;
+    margin: 1rem 0;
+    width: 90%;
 }
 
 .squad_con .squadbox {
-    width: 90%;
-    margin: auto;
+    width: 100%;
     background-color: rgb(101, 99, 99);
     border-radius: 18px;
     color: #fff;
@@ -58,65 +50,49 @@ html {
 
 .squadbox .chapter1 {
     display: flex;
-    justify-content: space-between;
     align-items: center;
 }
 
-.squadbox .chapter1 .image {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.container .squad_con .squadbox .chapter1 .image img {
-    width: 4.375rem;
+.squadbox .chapter1 .image img {
+    width: 4rem;
     border-radius: 18px;
 }
 
-.container .squad_con .squadbox .chapter1 .text img {
-    width: 1.25rem;
-    position: relative;
-    bottom: -0.25rem;
-}
-
-.container .squad_con .squadbox .chapter2 img {
-    width: 1.25rem;
-    margin: 0 0.4375rem 0 0;
-}
-
 .squadbox .chapter1 .text {
-    margin: 0 0.9375rem;
+    margin-left: 0.9375rem;
 }
 
 .squadbox .chapter1 .text p {
-    margin: 0 0 0.3125rem 0;
+    margin-bottom: 0.3125rem;
     font-weight: 600;
     font-size: 1.125rem;
 }
 
 .squadbox .chapter2 {
     display: flex;
-    justify-content: center;
     align-items: center;
 }
 
-/* squad chapter end */
+.squadbox .chapter2 img {
+    width: 1.25rem;
+    margin-right: 0.4375rem;
+}
 
 /* notcoin chapter */
 .notcoin_con {
     width: 100%;
-    margin: 0 0 3.125rem 0;
+    margin-bottom: 2rem;
 }
 
 .notcoin_con .notcoinbox {
     display: flex;
-    margin: 0 0 0.9375rem 0;
     justify-content: center;
     align-items: center;
+    margin-bottom: 0.9375rem;
 }
 
 .notcoinbox img {
-    margin: 0 0.9375rem;
+    margin-right: 0.9375rem;
 }
 
 .notcoinbox span {
@@ -132,10 +108,8 @@ html {
 
 .rankbox img,
 .rankbox span {
-    margin: 0 0 0 0.625rem;
+    margin-left: 0.625rem;
 }
-
-/* notcoin chapter end */
 
 /* clicker chapter */
 .clicker_con {
@@ -143,7 +117,7 @@ html {
     justify-content: center;
     align-items: center;
     width: 100%;
-    margin: 0 0 1.875rem 0;
+    margin-bottom: 1.875rem;
 }
 
 .clickerbox {
@@ -155,10 +129,8 @@ html {
 .clickerbox button {
     background: transparent;
     border-radius: 50%;
-    width: fit-content;
-    height: fit-content;
     border: none;
-    transition: .3s all ease-in-out;
+    transition: 0.3s all ease-in-out;
 }
 
 .clickerbox button:active {
@@ -169,8 +141,6 @@ html {
     width: 70%;
 }
 
-/* clicker chapter end */
-
 /* menu chapter */
 .functions_con {
     width: 100%;
@@ -178,7 +148,7 @@ html {
     justify-content: space-between;
     align-items: center;
     padding: 0.625rem;
-    margin: 0 0 0.625rem 0;
+    margin-bottom: 0.625rem;
 }
 
 /* energy */
@@ -212,10 +182,7 @@ html {
 
 .coinleftbox .numbers span {
     color: rgb(225, 225, 225);
-    margin-left: -0.5rem;
 }
-
-/* energy end */
 
 /* functions */
 .functionbox {
@@ -244,7 +211,7 @@ html {
     height: 80%;
     width: 0.0625rem;
     position: absolute;
-    right: 0px;
+    right: 0;
     background-color: gray;
 }
 
@@ -253,17 +220,14 @@ html {
     height: 80%;
     width: 0.0625rem;
     position: absolute;
-    right: 0px;
+    right: 0;
     background-color: gray;
 }
 
 .functionbox .functions .func p {
     font-size: 0.875rem;
-    margin: 0.1875rem 0 0 0;
+    margin-top: 0.1875rem;
 }
-
-/* functions end */
-/* menu chapter end */
 
 /* range chapter */
 .range_con {
@@ -285,13 +249,11 @@ html {
 .rangebox::before {
     content: "";
     width: 50%;
-    border-radius: 20px;
     height: 100%;
-    position: absolute;
     background-color: rgb(226, 226, 226);
+    border-radius: 20px;
+    position: absolute;
 }
-
-/* range chapter end */
 
 /* home bar */
 .home_bar {
@@ -299,7 +261,7 @@ html {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 0 0 0.3125rem 0;
+    margin-bottom: 0.3125rem;
 }
 
 .mine_button {
@@ -310,9 +272,45 @@ html {
     border-radius: 10px;
     font-size: 1rem;
     cursor: pointer;
-    margin-top: 10px;
+    width: 90%;
+    max-width: 375px;
 }
 
 .mine_button:active {
     transform: scale(0.98);
+}
+
+/* Page content for different sections */
+.frens_page, .earn_page, .boosts_page, .king_page {
+    width: 100%;
+    max-width: 375px;
+    padding: 1rem;
+    background-color: #222;
+    border-radius: 10px;
+    color: #fff;
+    overflow-y: auto;
+}
+
+.frens_header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.invite_section {
+    margin-top: 1rem;
+}
+
+.invite_section h3 {
+    margin-bottom: 0.5rem;
+}
+
+.invite_link input {
+    width: 100%;
+    padding: 0.5rem;
+    border-radius: 5px;
+    border: 1px solid #555;
+    background-color: #333;
+    color: #fff;
 }
