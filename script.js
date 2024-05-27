@@ -1,18 +1,6 @@
 let score = 0;
 let left = 6000;
 
-document.getElementById('tapButton').addEventListener('click', function() {
-    score++;
-    document.getElementById('score').textContent = 'Coins: ' + score;
-    if (navigator.vibrate) {
-        navigator.vibrate(50); // Vibrate for 50 milliseconds
-    }
-    // Show AdSense ad every 100 taps
-    if (score % 100 === 0) {
-        showAd();
-    }
-});
-
 function counter() {
     score++;
     document.getElementById("count").innerHTML = score;
@@ -21,13 +9,16 @@ function counter() {
     if (navigator.vibrate) {
         navigator.vibrate(50); // Haptic feedback
     }
-    if (score % 100 === 0) {
+    if (score % 69 === 0) {
         showAd();
     }
 }
 
 function showAd() {
-    alert('Show Ad Here');
+    document.getElementById('adContainer').style.display = 'block';
+    setTimeout(() => {
+        document.getElementById('adContainer').style.display = 'none';
+    }, 30000); // Show ad for 30 seconds
 }
 
 function showFrens() {
