@@ -30,6 +30,66 @@ html {
     flex-direction: column;
 }
 
+/* Existing styles */
+
+/* New Frens page styles */
+.frens_page {
+    text-align: center;
+}
+
+.frens_header h2 {
+    font-size: 2rem;
+}
+
+.frens_header p {
+    font-size: 1.5rem;
+}
+
+.invite_section {
+    margin: 1rem 0;
+}
+
+.invite_link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.invite_link input {
+    width: 70%;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 0.25rem;
+}
+
+.invite_link button {
+    padding: 0.5rem;
+    background-color: #007bff;
+    color: white;
+    border-radius: 0.25rem;
+    cursor: pointer;
+}
+
+.invite_rewards {
+    margin: 1rem 0;
+}
+
+.invite_rewards h3 {
+    font-size: 1.5rem;
+}
+
+.invite_rewards ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.invite_rewards li {
+    font-size: 1.25rem;
+    margin: 0.5rem 0;
+}
+
+/* Other existing styles */
 .squad_con {
     margin: 1.875rem 0 2.5rem 0;
     width: 100%;
@@ -157,10 +217,6 @@ html {
 .functions_con {
     width: 100%;
     display: flex;
-Continuing with the CSS to ensure all styles are applied:
-
-**style.css** (continued):
-```css
     justify-content: space-between;
     align-items: center;
     padding: 0.625rem;
