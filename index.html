@@ -60,19 +60,19 @@
             </div>
             <div class="functionbox">
                 <div class="functions">
-                    <div class="func" onclick="showFrens()">
+                    <div class="func" id="frens" onclick="showFrens()">
                         <img src="images/teddy-bear.webp" width="25" alt="">
                         <p>Frens</p>
                     </div>
-                    <div class="func" onclick="showEarn()">
+                    <div class="func" id="earn" onclick="showEarn()">
                         <img src="images/coin.webp" width="25" alt="">
                         <p>Earn</p>
                     </div>
-                    <div class="func" onclick="showBoosts()">
+                    <div class="func" id="boosts" onclick="showBoosts()">
                         <img src="images/rocket.webp" width="25" alt="">
                         <p>Boosts</p>
                     </div>
-                    <div class="func" onclick="showKing()">
+                    <div class="func" id="king" onclick="showKing()">
                         <img src="images/crown.webp" width="25" alt="">
                         <p>King</p>
                     </div>
@@ -81,15 +81,12 @@
         </div>
         <div class="range_con">
             <div class="rangebox">
-                <!-- Progress bar can be added here -->
+                <div class="progress" id="progress-bar"></div>
             </div>
         </div>
         <div class="home_bar">
-            <div class="line">
-                <!-- Home bar line or divider -->
-            </div>
+            <div class="line"></div>
         </div>
-        <!-- Ad container -->
         <div id="adContainer" style="display:none;">
             <ins class="adsbygoogle"
                  style="display:block"
