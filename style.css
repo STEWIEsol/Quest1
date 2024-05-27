@@ -40,8 +40,18 @@ html {
 /* Existing styles */
 
 /* New Frens page styles */
-.frens_page {
+.frens_page,
+.how_it_works_page {
     text-align: center;
+    margin: 1rem;
+}
+
+.how_it_works_page h2 {
+    font-size: 2rem;
+}
+
+.how_it_works_page p {
+    font-size: 1rem;
 }
 
 .frens_header h2 {
@@ -186,9 +196,15 @@ html {
     align-items: center;
 }
 
-.rankbox img,
-.rankbox span {
+.rankbox button {
     margin: 0 0 0 0.625rem;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 0.25rem;
+    cursor: pointer;
 }
 
 .clicker_con {
