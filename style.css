@@ -7,39 +7,97 @@
 }
 
 body {
+    width: 100%;
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100%;
-    height: 100vh;
-    background-color: #000;
+}
+
+html {
+    font-size: 16px;
     font-family: "Open Sans", sans-serif;
     color: #fff;
-    overflow: hidden; /* Prevents scrolling */
-    touch-action: manipulation; /* Prevents zooming on mobile */
 }
 
 .container {
-    width: 100%;
-    max-width: 375px; /* Standard width for a mobile view */
-    height: 100%;
-    max-height: 812px; /* Standard height for a mobile view */
+    width: 25rem;
     display: flex;
-    flex-direction: column;
     background: rgb(255, 193, 0);
     background: linear-gradient(0deg, rgba(255, 193, 0, 1) 0%, rgba(0, 0, 0, 1) 100%);
     justify-content: space-between;
     align-items: center;
+    flex-direction: column;
 }
 
-/* squad chapter */
-.squad_con {
+/* Existing styles */
+
+/* New Frens page styles */
+.frens_page {
+    text-align: center;
+}
+
+.frens_header h2 {
+    font-size: 2rem;
+}
+
+.frens_header p {
+    font-size: 1.5rem;
+}
+
+.invite_section {
     margin: 1rem 0;
-    width: 90%;
+}
+
+.invite_link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.invite_link input {
+    width: 70%;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 0.25rem;
+}
+
+.invite_link button {
+    padding: 0.5rem;
+    background-color: #007bff;
+    color: white;
+    border-radius: 0.25rem;
+    cursor: pointer;
+}
+
+.invite_rewards {
+    margin: 1rem 0;
+}
+
+.invite_rewards h3 {
+    font-size: 1.5rem;
+}
+
+.invite_rewards ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.invite_rewards li {
+    font-size: 1.25rem;
+    margin: 0.5rem 0;
+}
+
+/* Other existing styles */
+.squad_con {
+    margin: 1.875rem 0 2.5rem 0;
+    width: 100%;
 }
 
 .squad_con .squadbox {
-    width: 100%;
+    width: 90%;
+    margin: auto;
     background-color: rgb(101, 99, 99);
     border-radius: 18px;
     color: #fff;
@@ -51,49 +109,62 @@ body {
 
 .squadbox .chapter1 {
     display: flex;
+    justify-content: space-between;
     align-items: center;
 }
 
-.squadbox .chapter1 .image img {
-    width: 4rem;
+.squadbox .chapter1 .image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container .squad_con .squadbox .chapter1 .image img {
+    width: 4.375rem;
     border-radius: 18px;
 }
 
+.container .squad_con .squadbox .chapter1 .text img {
+    width: 1.25rem;
+    position: relative;
+    bottom: -0.25rem;
+}
+
+.container .squad_con .squadbox .chapter2 img {
+    width: 1.25rem;
+    margin: 0 0.4375rem 0 0;
+}
+
 .squadbox .chapter1 .text {
-    margin-left: 0.9375rem;
+    margin: 0 0.9375rem;
 }
 
 .squadbox .chapter1 .text p {
-    margin-bottom: 0.3125rem;
+    margin: 0 0 0.3125rem 0;
     font-weight: 600;
     font-size: 1.125rem;
 }
 
 .squadbox .chapter2 {
     display: flex;
+    justify-content: center;
     align-items: center;
 }
 
-.squadbox .chapter2 img {
-    width: 1.25rem;
-    margin-right: 0.4375rem;
-}
-
-/* notcoin chapter */
 .notcoin_con {
     width: 100%;
-    margin-bottom: 2rem;
+    margin: 0 0 3.125rem 0;
 }
 
 .notcoin_con .notcoinbox {
     display: flex;
+    margin: 0 0 0.9375rem 0;
     justify-content: center;
     align-items: center;
-    margin-bottom: 0.9375rem;
 }
 
 .notcoinbox img {
-    margin-right: 0.9375rem;
+    margin: 0 0.9375rem;
 }
 
 .notcoinbox span {
@@ -109,16 +180,15 @@ body {
 
 .rankbox img,
 .rankbox span {
-    margin-left: 0.625rem;
+    margin: 0 0 0 0.625rem;
 }
 
-/* clicker chapter */
 .clicker_con {
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
-    margin-bottom: 1.875rem;
+    margin: 0 0 1.875rem 0;
 }
 
 .clickerbox {
@@ -130,8 +200,10 @@ body {
 .clickerbox button {
     background: transparent;
     border-radius: 50%;
+    width: fit-content;
+    height: fit-content;
     border: none;
-    transition: 0.3s all ease-in-out;
+    transition: .3s all ease-in-out;
 }
 
 .clickerbox button:active {
@@ -142,17 +214,15 @@ body {
     width: 70%;
 }
 
-/* menu chapter */
 .functions_con {
     width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 0.625rem;
-    margin-bottom: 0.625rem;
+    margin: 0 0 0.625rem 0;
 }
 
-/* energy */
 .coinleftbox {
     display: flex;
     justify-content: center;
@@ -183,9 +253,9 @@ body {
 
 .coinleftbox .numbers span {
     color: rgb(225, 225, 225);
+    margin-left: -0.5rem;
 }
 
-/* functions */
 .functionbox {
     background-color: rgb(178, 178, 178);
     border-radius: 15px;
@@ -205,6 +275,7 @@ body {
     align-items: center;
     flex-direction: column;
     position: relative;
+    cursor: pointer; /* Add cursor pointer for interactivity */
 }
 
 .functionbox .functions .func:nth-child(1)::after {
@@ -212,7 +283,7 @@ body {
     height: 80%;
     width: 0.0625rem;
     position: absolute;
-    right: 0;
+    right: 0px;
     background-color: gray;
 }
 
@@ -221,16 +292,15 @@ body {
     height: 80%;
     width: 0.0625rem;
     position: absolute;
-    right: 0;
+    right: 0px;
     background-color: gray;
 }
 
 .functionbox .functions .func p {
     font-size: 0.875rem;
-    margin-top: 0.1875rem;
+    margin: 0.1875rem 0 0 0;
 }
 
-/* range chapter */
 .range_con {
     width: 100%;
     display: flex;
@@ -250,52 +320,23 @@ body {
 .rangebox::before {
     content: "";
     width: 50%;
-    height: 100%;
-    background-color: rgb(226, 226, 226);
     border-radius: 20px;
+    height: 100%;
     position: absolute;
+    background-color: rgb(226, 226, 226);
 }
 
-/* home bar */
 .home_bar {
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 0.3125rem;
+    margin: 0 0 0.3125rem 0;
 }
 
-/* Page content for different sections */
-.frens_page, .earn_page, .boosts_page, .king_page {
-    width: 100%;
-    max-width: 375px;
-    padding: 1rem;
-    background-color: #222;
-    border-radius: 10px;
-    color: #fff;
-    overflow-y: auto;
-}
-
-.frens_header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 1rem;
-}
-
-.invite_section {
-    margin-top: 1rem;
-}
-
-.invite_section h3 {
-    margin-bottom: 0.5rem;
-}
-
-.invite_link input {
-    width: 100%;
-    padding: 0.5rem;
-    border-radius: 5px;
-    border: 1px solid #555;
-    background-color: #333;
-    color: #fff;
+.line {
+    background-color: aliceblue;
+    width: 35%;
+    height: 0.3125rem;
+    border-radius: 50px;
 }
