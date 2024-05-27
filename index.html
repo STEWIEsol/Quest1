@@ -12,38 +12,40 @@
 
 <body>
     <div class="container">
-        <div class="squad_con">
-            <div class="squadbox">
-                <div class="chapter1">
-                    <div class="image">
-                        <img src="images/notdao_icon.webp" alt="">
+        <div id="dynamic-content">
+            <div class="squad_con">
+                <div class="squadbox">
+                    <div class="chapter1">
+                        <div class="image">
+                            <img src="images/notdao_icon.webp" alt="">
+                        </div>
+                        <div class="text">
+                            <p>NOT DAO</p>
+                            <img src="images/coin_icon.webp" alt="">
+                            <span>27,220,910</span>
+                        </div>
                     </div>
-                    <div class="text">
-                        <p>NOT DAO</p>
-                        <img src="images/coin_icon.webp" alt="">
-                        <span>27,220,910</span>
+                    <div class="chapter2">
+                        <img src="images/silver_trophy.webp" alt="">
+                        <p>Diamond</p>
                     </div>
                 </div>
-                <div class="chapter2">
-                    <img src="images/silver_trophy.webp" alt="">
-                    <p>Diamond</p>
+            </div>
+            <div class="notcoin_con">
+                <div class="notcoinbox">
+                    <img src="images/coin_icon.webp" width="50" alt="">
+                    <span id="count">0</span>
+                </div>
+                <div class="rankbox">
+                    <img src="images/silver_trophy.webp" width="20" alt="">
+                    <span>Bronze</span>
+                    <span style="color: #808080;" class="material-symbols-outlined">arrow_forward_ios</span>
                 </div>
             </div>
-        </div>
-        <div class="notcoin_con">
-            <div class="notcoinbox">
-                <img src="images/coin_icon.webp" width="50" alt="">
-                <span id="count">0</span>
-            </div>
-            <div class="rankbox">
-                <img src="images/silver_trophy.webp" width="20" alt="">
-                <span>Bronze</span>
-                <span style="color: #808080;" class="material-symbols-outlined">arrow_forward_ios</span>
-            </div>
-        </div>
-        <div class="clicker_con">
-            <div class="clickerbox">
-                <button onclick="counter()"><img src="images/coin_icon.webp" alt=""></button>
+            <div class="clicker_con">
+                <div class="clickerbox">
+                    <button id="tapButton"><img src="images/coin_icon.webp" alt=""></button>
+                </div>
             </div>
         </div>
         <div class="functions_con">
