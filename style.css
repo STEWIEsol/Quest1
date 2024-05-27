@@ -18,10 +18,18 @@ html {
     font-size: 16px;
     font-family: "Open Sans", sans-serif;
     color: #fff;
+    touch-action: manipulation; /* Prevent zooming on tap */
 }
 
 .container {
     width: 25rem;
+    max-width: 100%;
+    display: flex;
+    background: rgb(255, 193, 0);
+    background: linear-gradient(0deg, rgba(255, 193, 0, 1) 0%, rgba(0, 0, 0, 1) 100
+.container {
+    width: 25rem;
+    max-width: 100%;
     display: flex;
     background: rgb(255, 193, 0);
     background: linear-gradient(0deg, rgba(255, 193, 0, 1) 0%, rgba(0, 0, 0, 1) 100%);
@@ -30,66 +38,7 @@ html {
     flex-direction: column;
 }
 
-/* Existing styles */
-
-/* New Frens page styles */
-.frens_page {
-    text-align: center;
-}
-
-.frens_header h2 {
-    font-size: 2rem;
-}
-
-.frens_header p {
-    font-size: 1.5rem;
-}
-
-.invite_section {
-    margin: 1rem 0;
-}
-
-.invite_link {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 0.5rem;
-}
-
-.invite_link input {
-    width: 70%;
-    padding: 0.5rem;
-    border: 1px solid #ccc;
-    border-radius: 0.25rem;
-}
-
-.invite_link button {
-    padding: 0.5rem;
-    background-color: #007bff;
-    color: white;
-    border-radius: 0.25rem;
-    cursor: pointer;
-}
-
-.invite_rewards {
-    margin: 1rem 0;
-}
-
-.invite_rewards h3 {
-    font-size: 1.5rem;
-}
-
-.invite_rewards ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-.invite_rewards li {
-    font-size: 1.25rem;
-    margin: 0.5rem 0;
-}
-
-/* Other existing styles */
+/* squad chapter */
 .squad_con {
     margin: 1.875rem 0 2.5rem 0;
     width: 100%;
@@ -151,6 +100,9 @@ html {
     align-items: center;
 }
 
+/* squad chapter end */
+
+/* notcoin chapter */
 .notcoin_con {
     width: 100%;
     margin: 0 0 3.125rem 0;
@@ -183,6 +135,9 @@ html {
     margin: 0 0 0 0.625rem;
 }
 
+/* notcoin chapter end */
+
+/* clicker chapter */
 .clicker_con {
     display: flex;
     justify-content: center;
@@ -214,6 +169,9 @@ html {
     width: 70%;
 }
 
+/* clicker chapter end */
+
+/* menu chapter */
 .functions_con {
     width: 100%;
     display: flex;
@@ -223,6 +181,7 @@ html {
     margin: 0 0 0.625rem 0;
 }
 
+/* energy */
 .coinleftbox {
     display: flex;
     justify-content: center;
@@ -256,6 +215,9 @@ html {
     margin-left: -0.5rem;
 }
 
+/* energy end */
+
+/* functions */
 .functionbox {
     background-color: rgb(178, 178, 178);
     border-radius: 15px;
@@ -275,7 +237,6 @@ html {
     align-items: center;
     flex-direction: column;
     position: relative;
-    cursor: pointer; /* Add cursor pointer for interactivity */
 }
 
 .functionbox .functions .func:nth-child(1)::after {
@@ -301,6 +262,10 @@ html {
     margin: 0.1875rem 0 0 0;
 }
 
+/* functions end */
+/* menu chapter end */
+
+/* range chapter */
 .range_con {
     width: 100%;
     display: flex;
@@ -326,6 +291,9 @@ html {
     background-color: rgb(226, 226, 226);
 }
 
+/* range chapter end */
+
+/* home bar */
 .home_bar {
     width: 100%;
     display: flex;
@@ -334,9 +302,17 @@ html {
     margin: 0 0 0.3125rem 0;
 }
 
-.line {
-    background-color: aliceblue;
-    width: 35%;
-    height: 0.3125rem;
-    border-radius: 50px;
+.mine_button {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.mine_button:active {
+    transform: scale(0.98);
 }
