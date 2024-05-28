@@ -51,19 +51,26 @@ function showHowItWorks() {
                         <img src="images/notdao_icon.webp" alt="">
                     </div>
                     <div class="text">
-                        <p>Mine Stewie</p>
+                        <p class="important">Mine Stewie</p>
                     </div>
-                    <button class="func" id="howItWorksButton" onclick="showHowItWorks()">How It Works</button>
+                    <button class="func how-it-works-button" id="howItWorksButton" onclick="showHowItWorks()">How It Works</button>
                 </div>
             </div>
         </div>
         <div class="how_it_works_page">
             <h2>How It Works</h2>
             <p>Calling all adventurers! 🌟</p>
-            <p>Mine Stewie tokens with all your might until the TGE arrives! ⛏️✨ Use different boosters to supercharge your gains and collect even more coins. Head to the Earn section and conquer the daily quests to win massive bags of coins! 💰💥</p>
-            <p>Invite your friends to join the journey and earn even more riches together! 🎉👯‍♂️ At the end, all your coins will be converted into STWE tokens. These will be distributed equally based on the total coins in the game and among players. The exact exchange ratio isn't available yet, but stay tuned until the TGE for the big reveal! 📅🔍</p>
+            <p>Mine Stewie tokens with all your might until the TGE arrives!⛏️✨</p> 
+            <p></p>
+            <p>Use different boosters to supercharge your gains and collect even more coins.</p>
+            <P>Head to the Earn section and conquer the daily quests to win bags of coins! 💰💥</p>
+            <p>Invite your friends and earn even more riches together!🎉👯‍♂️</p>
+            <p></p>
+            <p>All your coins will be converted into STWE tokens. These will be distributed equally based on the total coins in the game and among players. The exact exchange ratio isn't available yet, but stay tuned until the TGE for the big reveal! 📅🔍</p>
+            <p></p>
             <p>Join our social media channels for all the latest updates and epic announcements! 📲🌐</p>
-            <p>And here's the best part: 10% of the total STWE supply will be available for you to play for. If you're lucky and gather enough coins, you'll even be able to purchase a whitelist spot for our upcoming presales from the boost store! 🚀🏆</p>
+            <p>10% of the total STWE supply will be available for you to play for. If you're lucky and gather enough coins, you'll even be able to purchase a whitelist spot for our upcoming presales from the boost store! 🚀🏆</p>
+            <p></p>
             <p>Are you ready to become the ultimate Stewie Token master? Your adventure awaits! 🌠🔥</p>
         </div>
     `;
@@ -80,20 +87,20 @@ function showFrens() {
                         <img src="images/notdao_icon.webp" alt="">
                     </div>
                     <div class="text">
-                        <p>Mine Stewie</p>
+                        <p class="important">Mine Stewie</p>
                     </div>
-                    <button class="func" id="howItWorksButton" onclick="showHowItWorks()">How It Works</button>
+                    <button class="func how-it-works-button" id="howItWorksButton" onclick="showHowItWorks()">How It Works</button>
                 </div>
             </div>
         </div>
         <div class="frens_page">
             <div class="frens_header">
-                <h2>Your Frens</h2>
+                <h2 class="important">Your Frens</h2>
                 <p>0 Frens</p>
                 <button onclick="howItWorks()">How it Works</button>
             </div>
             <div class="invite_section">
-                <h3>Invite Link</h3>
+                <h3 class="important">Invite Link</h3>
                 <p>Invite your frens and get bonuses!</p>
                 <div class="invite_link">
                     <input type="text" value="t.me/stewie_quest_bot?start=YOUR_REFERRAL_CODE" readonly>
@@ -101,7 +108,7 @@ function showFrens() {
                 </div>
             </div>
             <div class="invite_rewards">
-                <h3>2,500 Coins for Invite</h3>
+                <h3 class="important">2,500 Coins for Invite</h3>
                 <p>You'll get 2500 coins for every invite. Every boss killed by your referral will earn you huge prizes:</p>
                 <ul>
                     <li>LVL 1: 12,500 Coins</li>
