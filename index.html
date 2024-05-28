@@ -14,24 +14,22 @@
     <div class="container">
         <div id="dynamic-content">
             <div class="squad_con">
-                <div class="squadbox" onclick="showMain()">
+                <div class="squadbox">
                     <div class="chapter1">
-                        <div class="image">
+                        <div class="image" onclick="showMain()">
                             <img src="images/notdao_icon.webp" alt="">
                         </div>
                         <div class="text">
                             <p>Mine Stewie</p>
                         </div>
                     </div>
+                    <button class="func" id="howItWorksButton" onclick="showHowItWorks()">How It Works</button>
                 </div>
             </div>
             <div class="notcoin_con">
                 <div class="notcoinbox">
                     <img src="images/coin_icon.webp" width="50" alt="">
                     <span id="count">0</span>
-                </div>
-                <div class="rankbox">
-                    <button onclick="showHowItWorks()">How It Works</button>
                 </div>
             </div>
             <div class="clicker_con">
