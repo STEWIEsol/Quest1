@@ -122,7 +122,6 @@ html {
     justify-content: space-between;
     padding: 0.625rem;
     align-items: center;
-    cursor: pointer;
 }
 
 .squadbox .chapter1 {
@@ -135,6 +134,7 @@ html {
     display: flex;
     align-items: center;
     justify-content: center;
+    cursor: pointer;
 }
 
 .container .squad_con .squadbox .chapter1 .image img {
@@ -146,11 +146,6 @@ html {
     width: 1.25rem;
     position: relative;
     bottom: -0.25rem;
-}
-
-.container .squad_con .squadbox .chapter2 img {
-    width: 1.25rem;
-    margin: 0 0.4375rem 0 0;
 }
 
 .squadbox .chapter1 .text {
@@ -205,6 +200,11 @@ html {
     border: none;
     border-radius: 0.25rem;
     cursor: pointer;
+}
+
+.rankbox button.active {
+    background-color: #ffcc00;
+    border-radius: 10px;
 }
 
 .clicker_con {
