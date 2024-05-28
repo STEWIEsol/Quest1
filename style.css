@@ -109,6 +109,23 @@ html {
     margin-top: 2rem;
 }
 
+.energy_bar {
+    width: 100%;
+    height: 0.5rem;
+    background-color: rgb(121, 121, 121);
+    border-radius: 20px;
+    position: relative;
+    margin-top: 0.5rem;
+}
+
+.progress {
+    height: 100%;
+    background-color: rgb(226, 226, 226);
+    border-radius: 20px;
+    width: 0%;
+    transition: width 0.3s ease-in-out;
+}
+
 /* Other existing styles */
 .squad_con {
     margin: 1.875rem 0 2.5rem 0;
@@ -255,12 +272,14 @@ html {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: row;
 }
 
 .coinleftbox .icon {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-right: 1rem;
 }
 
 .coinleftbox .icon img {
@@ -294,22 +313,25 @@ html {
     background-color: rgb(178, 178, 178);
     border-radius: 15px;
     padding: 0.375rem;
+    width: 100%;
 }
 
 .functionbox .functions {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-direction: row;
 }
 
 .functionbox .functions .func {
-    padding: 0 0.9375rem;
+    padding: 0.9375rem;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     position: relative;
     cursor: pointer; /* Add cursor pointer for interactivity */
+    flex: 1;
 }
 
 .functionbox .functions .func p {
@@ -325,40 +347,9 @@ html {
 }
 
 .range_con {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 1.25rem;
-}
-
-.rangebox {
-    width: 90%;
-    height: 0.9375rem;
-    background-color: rgb(121, 121, 121);
-    border-radius: 20px;
-    position: relative;
-}
-
-.progress {
-    height: 100%;
-    background-color: rgb(226, 226, 226);
-    border-radius: 20px;
-    width: 0%;
-    transition: width 0.3s ease-in-out;
+    display: none;
 }
 
 .home_bar {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0 0 0.3125rem 0;
-}
-
-.line {
-    background-color: aliceblue;
-    width: 35%;
-    height: 0.3125rem;
-    border-radius: 50px;
+    display: none;
 }
