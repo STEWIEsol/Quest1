@@ -101,4 +101,60 @@ function showFrens() {
                 </div>
             </div>
             <div class="invite_rewards">
-                <h3>2,500 Coins
+                <h3>2,500 Coins for Invite</h3>
+                <p>You'll get 2500 coins for every invite. Every boss killed by your referral will earn you huge prizes:</p>
+                <ul>
+                    <li>LVL 1: 12,500 Coins</li>
+                    <li>LVL 2: 25,000 Coins</li>
+                    <li>LVL 3: 50,000 Coins</li>
+                </ul>
+            </div>
+        </div>
+    `;
+}
+
+function howItWorks() {
+    alert('Explain how the referral system works.');
+}
+
+function copyLink() {
+    const copyText = document.querySelector('.invite_link input');
+    copyText.select();
+    document.execCommand('copy');
+    alert('Referral link copied to clipboard');
+}
+
+function showEarn() {
+    setActiveSection('earn');
+    alert('Show Earn Tasks Here');
+}
+
+function showBoosts() {
+    setActiveSection('boosts');
+    alert('Show Boosts Here');
+}
+
+function showKing() {
+    setActiveSection('king');
+    alert('Show King Leaderboard Here');
+}
+
+function setActiveSection(sectionId) {
+    const sections = document.querySelectorAll('.functions .func, .squadbox button');
+    sections.forEach(section => {
+        section.classList.remove('active');
+    });
+    document.getElementById(sectionId).classList.add('active');
+}
+
+// Energy cooldown logic
+function updateEnergy() {
+    if (energy < maxLeft) {
+        energy += energyRate;
+        left = Math.floor(energy);
+        energyElement.innerHTML = `${left}`;
+        setTimeout(updateEnergy, 1000);
+    }
+}
+
+updateEnergy();
