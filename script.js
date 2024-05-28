@@ -120,20 +120,20 @@ function showBoosts() {
     setActiveSection('boosts');
     const dynamicContent = document.getElementById('dynamic-content');
     dynamicContent.innerHTML = `
-        <div class="squad_con">
-            <div class="squadbox">
-                <div class="chapter1">
-                    <div class="image" onclick="showMain()">
-                        <img src="images/notdao_icon.webp" alt="">
-                    </div>
-                    <div class="text">
-                        <p class="important">Mine Stewie</p>
-                    </div>
-                    <button class="func how-it-works-button" id="howItWorksButton" onclick="showHowItWorks()">How It Works</button>
+        <div class="boost_shop">
+            <div class="coinleftbox">
+                <div class="icon">
+                    <img src="images/flash.webp" alt="">
+                </div>
+                <div class="numbers">
+                    <p id="left_coin">6000</p>
+                    <span>/6000</span>
+                    <small id="energy_rate">0.080/s</small>
+                </div>
+                <div class="energy_bar">
+                    <div class="progress" id="progress-bar"></div>
                 </div>
             </div>
-        </div>
-        <div class="boost_shop">
             <h2>Boost Shop</h2>
             <div class="boost_buttons">
                 <button class="boost_button" onclick="upgradeBoost('energyBoost')">Energy Boost Recharge <span class="info_icon" onclick="showBoostInfo('Energy Boost Recharge', '100 coins', '0.02 energy per level')">ℹ️</span></button>
