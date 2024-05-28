@@ -44,6 +44,10 @@ html {
 .how_it_works_page {
     text-align: center;
     margin: 1rem;
+    flex-grow: 1; /* Make all pages take full height */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .how_it_works_page h2 {
@@ -135,6 +139,7 @@ html {
     align-items: center;
     justify-content: center;
     cursor: pointer;
+    touch-action: manipulation; /* Enable multi-touch */
 }
 
 .container .squad_con .squadbox .chapter1 .image img {
@@ -227,6 +232,7 @@ html {
     height: fit-content;
     border: none;
     transition: .3s all ease-in-out;
+    touch-action: manipulation; /* Enable multi-touch */
 }
 
 .clickerbox button:active {
