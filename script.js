@@ -113,6 +113,52 @@ function showFrens() {
     `;
 }
 
+function showBoosts() {
+    setActiveSection('boosts');
+    const dynamicContent = document.getElementById('dynamic-content');
+    dynamicContent.innerHTML = `
+        <div class="squad_con">
+            <div class="squadbox">
+                <div class="chapter1">
+                    <div class="image" onclick="showMain()">
+                        <img src="images/notdao_icon.webp" alt="">
+                    </div>
+                    <div class="text">
+                        <p class="important">Mine Stewie</p>
+                    </div>
+                    <button class="func how-it-works-button" id="howItWorksButton" onclick="showHowItWorks()">How It Works</button>
+                </div>
+            </div>
+        </div>
+        <div class="boost_shop">
+            <h2>Boost Shop</h2>
+            <div class="boost_buttons">
+                <button class="boost_button" onclick="showBoostInfo('Energy Boost Recharge', 100, 1000, 0.02, 0.02)">
+                    Energy Boost Recharge
+                    <span class="info_icon">ℹ️</span>
+                </button>
+                <button class="boost_button" onclick="showBoostInfo('Energy Cap', 100, 1000, 100, 100)">
+                    Energy Cap
+                    <span class="info_icon">ℹ️</span>
+                </button>
+                <button class="boost_button" onclick="showBoostInfo('Tap Bot', 300000, 5000, 0.5, 0.1)">
+                    Tap Bot
+                    <span class="info_icon">ℹ️</span>
+                </button>
+                <button class="boost_button" onclick="showBoostInfo('Presale Spot', 10000000, 20000, 0, 0)">
+                    Presale Spot
+                    <span class="info_icon">ℹ️</span>
+                </button>
+            </div>
+            <p class="coin_balance">Your Coin Balance: <span id="coin_balance">0</span></p>
+        </div>
+    `;
+}
+
+function showBoostInfo(name, cost, levels, initialBoost, increment) {
+    alert(`${name}: Cost starts at ${cost} coins. Provides ${initialBoost} boost per level, increments by ${increment}.`);
+}
+
 function howItWorks() {
     alert('Explain how the referral system works.');
 }
