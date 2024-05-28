@@ -41,34 +41,30 @@ function showMain() {
 }
 
 function showHowItWorks() {
-    setActiveSection('howItWorks');
+    setActiveSection('howItWorksButton');
     const dynamicContent = document.getElementById('dynamic-content');
     dynamicContent.innerHTML = `
         <div class="squad_con">
-            <div class="squadbox" onclick="showMain()">
+            <div class="squadbox">
                 <div class="chapter1">
-                    <div class="image">
+                    <div class="image" onclick="showMain()">
                         <img src="images/notdao_icon.webp" alt="">
                     </div>
                     <div class="text">
                         <p>Mine Stewie</p>
                     </div>
+                    <button class="func" id="howItWorksButton" onclick="showHowItWorks()">How It Works</button>
                 </div>
             </div>
         </div>
         <div class="how_it_works_page">
             <h2>How It Works</h2>
-            <p>Calling all adventurers! 🌟
-
-Mine Stewie tokens with all your might until the TGE arrives! ⛏️✨ Use different boosters to supercharge your gains and collect even more coins. Head to the Earn section and conquer the daily quests to win massive bags of coins! 💰💥
-
-Invite your friends to join the journey and earn even more riches together! 🎉👯‍♂️ At the end, all your coins will be converted into STWE tokens. These will be distributed equally based on the total coins in the game and among players. The exact exchange ratio isn't available yet, but stay tuned until the TGE for the big reveal! 📅🔍
-
-Join our social media channels for all the latest updates and epic announcements! 📲🌐
-
-And here's the best part: 10% of the total STWE supply will be available for you to play for. If you're lucky and gather enough coins, you'll even be able to purchase a whitelist spot for our upcoming presales from the boost store! 🚀🏆
-
-Are you ready to become the ultimate Stewie Token master? Your adventure awaits! 🌠🔥</p>
+            <p>Calling all adventurers! 🌟</p>
+            <p>Mine Stewie tokens with all your might until the TGE arrives! ⛏️✨ Use different boosters to supercharge your gains and collect even more coins. Head to the Earn section and conquer the daily quests to win massive bags of coins! 💰💥</p>
+            <p>Invite your friends to join the journey and earn even more riches together! 🎉👯‍♂️ At the end, all your coins will be converted into STWE tokens. These will be distributed equally based on the total coins in the game and among players. The exact exchange ratio isn't available yet, but stay tuned until the TGE for the big reveal! 📅🔍</p>
+            <p>Join our social media channels for all the latest updates and epic announcements! 📲🌐</p>
+            <p>And here's the best part: 10% of the total STWE supply will be available for you to play for. If you're lucky and gather enough coins, you'll even be able to purchase a whitelist spot for our upcoming presales from the boost store! 🚀🏆</p>
+            <p>Are you ready to become the ultimate Stewie Token master? Your adventure awaits! 🌠🔥</p>
         </div>
     `;
 }
@@ -78,14 +74,15 @@ function showFrens() {
     const dynamicContent = document.getElementById('dynamic-content');
     dynamicContent.innerHTML = `
         <div class="squad_con">
-            <div class="squadbox" onclick="showMain()">
+            <div class="squadbox">
                 <div class="chapter1">
-                    <div class="image">
+                    <div class="image" onclick="showMain()">
                         <img src="images/notdao_icon.webp" alt="">
                     </div>
                     <div class="text">
                         <p>Mine Stewie</p>
                     </div>
+                    <button class="func" id="howItWorksButton" onclick="showHowItWorks()">How It Works</button>
                 </div>
             </div>
         </div>
@@ -104,60 +101,4 @@ function showFrens() {
                 </div>
             </div>
             <div class="invite_rewards">
-                <h3>2,500 Coins for Invite</h3>
-                <p>You'll get 2500 coins for every invite. Every boss killed by your referral will earn you huge prizes:</p>
-                <ul>
-                    <li>LVL 1: 12,500 Coins</li>
-                    <li>LVL 2: 25,000 Coins</li>
-                    <li>LVL 3: 50,000 Coins</li>
-                </ul>
-            </div>
-        </div>
-    `;
-}
-
-function howItWorks() {
-    alert('Explain how the referral system works.');
-}
-
-function copyLink() {
-    const copyText = document.querySelector('.invite_link input');
-    copyText.select();
-    document.execCommand('copy');
-    alert('Referral link copied to clipboard');
-}
-
-function showEarn() {
-    setActiveSection('earn');
-    alert('Show Earn Tasks Here');
-}
-
-function showBoosts() {
-    setActiveSection('boosts');
-    alert('Show Boosts Here');
-}
-
-function showKing() {
-    setActiveSection('king');
-    alert('Show King Leaderboard Here');
-}
-
-function setActiveSection(sectionId) {
-    const sections = document.querySelectorAll('.functions .func');
-    sections.forEach(section => {
-        section.classList.remove('active');
-    });
-    document.getElementById(sectionId).classList.add('active');
-}
-
-// Energy cooldown logic
-function updateEnergy() {
-    if (energy < maxLeft) {
-        energy += energyRate;
-        left = Math.floor(energy);
-        energyElement.innerHTML = `${left}`;
-        setTimeout(updateEnergy, 1000);
-    }
-}
-
-updateEnergy();
+                <h3>2,500 Coins
