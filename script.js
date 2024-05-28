@@ -3,6 +3,7 @@ let left = 6000;
 const maxLeft = 6000;
 const energyRate = 0.08;
 let energy = left;
+let coins = 0;
 const energyElement = document.getElementById('left_coin');
 
 document.getElementById('tapButton').addEventListener('touchstart', function() {
@@ -11,7 +12,9 @@ document.getElementById('tapButton').addEventListener('touchstart', function() {
 
 function counter() {
     score++;
+    coins++;
     document.getElementById("count").innerHTML = score;
+    document.getElementById("coin_balance").innerHTML = coins;
     left--;
     energyElement.innerHTML = Math.floor(left);
     updateProgressBar();
@@ -133,30 +136,31 @@ function showBoosts() {
         <div class="boost_shop">
             <h2>Boost Shop</h2>
             <div class="boost_buttons">
-                <button class="boost_button" onclick="showBoostInfo('Energy Boost Recharge', 100, 1000, 0.02, 0.02)">
-                    Energy Boost Recharge
-                    <span class="info_icon">ℹ️</span>
-                </button>
-                <button class="boost_button" onclick="showBoostInfo('Energy Cap', 100, 1000, 100, 100)">
-                    Energy Cap
-                    <span class="info_icon">ℹ️</span>
-                </button>
-                <button class="boost_button" onclick="showBoostInfo('Tap Bot', 300000, 5000, 0.5, 0.1)">
-                    Tap Bot
-                    <span class="info_icon">ℹ️</span>
-                </button>
-                <button class="boost_button" onclick="showBoostInfo('Presale Spot', 10000000, 20000, 0, 0)">
-                    Presale Spot
-                    <span class="info_icon">ℹ️</span>
-                </button>
+                <button class="boost_button" onclick="upgradeBoost('energyBoost')">Energy Boost Recharge <span class="info_icon" onclick="showBoostInfo('Energy Boost Recharge', '100 coins', '0.02 energy per level')">ℹ️</span></button>
+                <button class="boost_button" onclick="upgradeBoost('energyCap')">Energy Cap <span class="info_icon" onclick="showBoostInfo('Energy Cap', '100 coins', '100 energy per level')">ℹ️</span></button>
+                <button class="boost_button" onclick="upgradeBoost('tapBot')">Tap Bot <span class="info_icon" onclick="showBoostInfo('Tap Bot', '300,000 coins', '0.5 coins per second, consumes 1 energy per second')">ℹ️</span></button>
+                <button class="boost_button" onclick="upgradeBoost('presaleSpot')">Presale Spot <span class="info_icon" onclick="showBoostInfo('Presale Spot', '10,000,000 coins', 'Limited to 20,000 pieces')">ℹ️</span></button>
             </div>
             <p class="coin_balance">Your Coin Balance: <span id="coin_balance">0</span></p>
         </div>
     `;
 }
 
-function showBoostInfo(name, cost, levels, initialBoost, increment) {
-    alert(`${name}: Cost starts at ${cost} coins. Provides ${initialBoost} boost per level, increments by ${increment}.`);
+function showBoostInfo(name, cost, benefit) {
+    alert(`${name}: Costs ${cost}. Provides ${benefit}.`);
+}
+
+function upgradeBoost(type) {
+    // Example implementation: You need to handle the logic for upgrading boosts
+    if (type === 'energyBoost') {
+        // Handle Energy Boost upgrade logic
+    } else if (type === 'energyCap') {
+        // Handle Energy Cap upgrade logic
+    } else if (type === 'tapBot') {
+        // Handle Tap Bot upgrade logic
+    } else if (type === 'presaleSpot') {
+        // Handle Presale Spot purchase logic
+    }
 }
 
 function howItWorks() {
@@ -173,11 +177,6 @@ function copyLink() {
 function showEarn() {
     setActiveSection('earn');
     alert('Show Earn Tasks Here');
-}
-
-function showBoosts() {
-    setActiveSection('boosts');
-    alert('Show Boosts Here');
 }
 
 function showKing() {
