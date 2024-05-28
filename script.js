@@ -5,7 +5,7 @@ const energyRate = 0.08;
 let energy = left;
 const energyElement = document.getElementById('left_coin');
 
-document.getElementById('tapButton').addEventListener('click', function() {
+document.getElementById('tapButton').addEventListener('touchstart', function() {
     counter();
 });
 
